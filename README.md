@@ -1,7 +1,7 @@
 # ⚛ Repository Competitive Programming Yonkou-1 ⚛
 
 ## 💢 Description
-This repository is intended for finished competition solution 
+This repository is intended for wrapping finished competition solution and creating template code
 
 
 ## 💢 Made by
