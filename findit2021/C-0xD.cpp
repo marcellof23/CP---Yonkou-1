@@ -19,7 +19,7 @@ int main(){
 	cin >> n >> d;
 	for (int i=0; i<n; i++) cin >> a[i];
 	sort(a, a+n);
-	for (int i=0a; i<n; i++) a[i] -= d*i;
+	for (int i=0; i<n; i++) a[i] -= d*i;
 	priority_queue<long long> pq;
 	pq.push(a[0]);
 	for (int i=1; i<n; i++){
