@@ -87,8 +87,6 @@ int query(int l, int r){
 		ht.first %= mod[0];
 		ht.second *= mod_pow(base, ss-1, mod[1]);
 		ht.second %= mod[1];
-		// cout << ss << ' ' << ss+mid-1 << ' ' << st << ' ' << st+mid-1 << '\n'; 
-		// cout << '(' << hs.first << ',' << hs.second << ")(" << ht.first << ',' << ht.second << ")\n";
 		if (hs == ht){
 			ans = mid;
 			ll = mid+1;
@@ -133,26 +131,6 @@ int main(){
 			cin >> x >> c;
 			update(x+1, c);
 		}
-		// cout << s << ' ' << t << '\n';
 	}
 	return 0;
 }
-
-/*
-abccbacdcdbaaaa
-1
-0 0 0
-
-abccbacdcdbaaaa
-9
-0 0 5
-0 1 5
-0 6 9
-0 11 14
-1 1 a
-1 2 a
-0 0 14
-1 11 c
-0 0 14
-
-*/

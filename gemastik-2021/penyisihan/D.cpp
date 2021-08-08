@@ -19,7 +19,6 @@ long long offset_pq(string s, long long m){
         }
     }
     long long ret = 1, mul = 10;
-    // cout << p << ' ' << q << '\n';
     for (; p; p>>=1){
         if (p&1){
             ret *= mul;
@@ -33,22 +32,7 @@ long long offset_pq(string s, long long m){
     return ret;
 }
 
-void tes(){
-    while (1){
-        string s; long long m;
-        cin >> s >> m;
-        cout << offset_pq(s, m) << '\n';
-    }
-    /*
-    10e2+3 104
-    10e0+0 10000
-    10e1000+2222 13
-    12222
-    */
-}
-
 int main(){
-    // tes();
     ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
     long long n, k, l;
     string sl;
@@ -87,7 +71,6 @@ int main(){
                 long long sz = cycle.size();
                 if (sl.length() < 3 || sl[2] != 'e') l = stoll(sl)%sz;
                 else l = offset_pq(sl, sz);
-                // cout << "l = " << l << '\n';
                 for(long long j=0; j<sz; j++){
                     cpy[cycle[(l + j)%sz]] = s[cycle[j]];
                 }
@@ -99,24 +82,3 @@ int main(){
         cout << '\n';
     }
 }
-
-/*
-6
-time space reality power soul mind
-3
-4 1
-1 -> 2
-2 -> 1
-4 -> 6
-6 -> 4
-2 13
-2 -> 4
-4 -> 2
-6 10e6 + 4
-1 -> 2
-2 -> 3
-3 -> 4
-4 -> 5
-5 -> 6
-6 -> 1
-*/
