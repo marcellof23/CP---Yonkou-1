@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-<<<<<<< HEAD
 long long mod_pow(long long a, long long b, long long m){
 	long long ret = 1;
 	for (; b; b>>=1){
@@ -174,4 +173,3 @@ XXX.
 ..XXX
 ..XXX
 */
-=======
