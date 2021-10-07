@@ -5,6 +5,7 @@ long long n, m, k;
 long long a[1069][1069];
 long long down[1069][1069];
 
+
 int main()
 {
     ios_base::sync_with_stdio(0);
