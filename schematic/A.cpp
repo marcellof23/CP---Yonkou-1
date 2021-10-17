@@ -1,30 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+long long mod = 1e9+7;
+long long dp[1069][1069];
+
+void pre(){
+    for(int i=0; i<1069; i++){
+        dp[1][i] = 1;
+    }
+    for(int i=2; i<1069; i++){
+        for(int j=0; j<1069; j++){
+            dp[i][j] = dp[i-1][j];
+            if(j>=i){
+                dp[i][j] += dp[i][j-i];
+                dp[i][j] %= mod;
+            }
+        }
+    }
+}
+
 int main()
 {
-  int mod = 1e9 + 7;
-  int n, target;
-  cin >> n >> target;
-  vector<int> x(n);
-  for (int i = 1; i <= n; i++)
-  {
-    x[i - 1] = i;
-  }
-
-  vector<vector<int>> dp(n + 1, vector<int>(target + 1, 0));
-  dp[0][0] = 1;
-  for (int i = 1; i <= n; i++)
-  {
-    for (int j = 0; j <= target; j++)
-    {
-      dp[i][j] = dp[i - 1][j];
-      int left = j - x[i - 1];
-      if (left >= 0)
-      {
-        (dp[i][j] += dp[i][left]) %= mod;
-      }
+    pre();
+    int T, M, N;
+    cin >> T;
+    while(T--){
+        cin >> M >> N;
+        cout << dp[N][M] << endl;
     }
-  }
-  cout << dp[n][target] << endl;
 }
