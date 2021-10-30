@@ -27,8 +27,8 @@ void sort(map<string, ll> &M)
   cout << "V" << A[0].first << endl;
 }
 
-int r[8] = {1, 2, 3, 1, 2, 1};
-int l[8] = {2, 2, 2, 3, 3, 4};
+int r[6] = {1, 2, 3, 1, 2, 1};
+int sz[6] = {2, 2, 2, 3, 3, 4};
 
 int main()
 {
@@ -42,18 +42,29 @@ int main()
     string S;
     int K;
     cin >> S >> K;
-    for (int i = 0; i < 8; i++)
+
+    set<string> s;
+
+    for (int i = 0; i < 6; i++)
     {
-      string ss = S.substr(r[i], l[i]);
-      //cout << ss << " ";
-      auto it = mymap.find(ss);
+      string ss = S.substr(r[i], sz[i]);
+      if (ss[0] == '0')
+      {
+        continue;
+      }
+      s.insert(ss);
+    }
+    for (auto s_ : s)
+    {
+      auto it = mymap.find(s_);
+
       if (it != mymap.end())
       {
-        mymap[ss] = mymap[ss] + K;
+        mymap[s_] += K;
       }
-      else if (ss != "")
+      else if (s_ != "")
       {
-        mymap.insert({ss, K});
+        mymap.insert({s_, K});
       }
     }
   }
