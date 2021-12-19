@@ -1,5 +1,42 @@
 #include <bits/stdc++.h>
 using namespace std;
+<<<<<<< HEAD
+#define ll long long
+
+int main()
+{
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int n;
+  cin >> n;
+  int arr[n];
+  for (int i = 0; i < n; i++)
+  {
+    cin >> arr[i];
+  }
+  sort(arr, arr + n, greater<int>());
+  bool pass = false;
+  for (int i = 0; i < n - 6; i++)
+  {
+    if (arr[i] < ((ll)arr[i + 1] + arr[i + 2]) && ((ll)arr[i + 1] + arr[i + 2]) < ((ll)arr[i + 3] + arr[i + 4] + arr[i + 5] + arr[i + 6]))
+    {
+      cout << (ll)arr[i] + arr[i + 1] + arr[i + 2] + arr[i + 3] + arr[i + 4] + arr[i + 5] + arr[i + 6] << endl;
+      pass = true;
+      break;
+    }
+    else
+    {
+      continue;
+    }
+  }
+
+  if (!pass)
+  {
+    cout << -1 << endl;
+  }
+  return 0;
+}
+=======
 
 long long n, p[500069], idx;
 pair<long long, long long> points[500069];
@@ -50,3 +87,4 @@ int main(){
     }
     cout << ans << endl;
 }
+>>>>>>> f34b21f322c2b5f73e95cd3eae5a67827c5d0c37
