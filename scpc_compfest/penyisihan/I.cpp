@@ -1,5 +1,36 @@
 #include <bits/stdc++.h>
 using namespace std;
+<<<<<<< HEAD
+#define ll long long
+
+const int MAXN = 1e5 + 5;
+int V[MAXN];
+vector<int> nol, satu;
+int main()
+{
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  int N;
+  cin >> N;
+  for (int i = 0; i < N; i++)
+  {
+    cin >> V[i];
+  }
+  for (int i = 0; i < N; i++)
+  {
+    int x;
+    cin >> x;
+    if (V[i] == 0)
+    {
+      nol.push_back(x);
+    }
+    else
+    {
+      satu.push_back(x);
+    }
+  }
+  return 0;
+=======
 
 /**
  * Author: Stanford
@@ -113,4 +144,5 @@ int main(){
 	// pasang edge internal v = 0
 	for (int i=1; i<=100; i++) mcmf.addEdge(i, i+100, cnt[0][i], )
 	return 0;
+>>>>>>> 3d3d04570f91305db0081b579471a7697b84edae
 }
