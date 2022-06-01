@@ -4,6 +4,9 @@
 # unignore with extensions
 !*.*
 
+# unignore dirs
+!*/
+
 # ignore binaries
 *.exe
 *.o
