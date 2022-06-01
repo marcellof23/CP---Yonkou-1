@@ -1,2 +1,9 @@
+# ignore all
+*
+
+# unignore with extensions
+!*.*
+
+# ignore binaries
 *.exe
 *.o
