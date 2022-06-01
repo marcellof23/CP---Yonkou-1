@@ -8,6 +8,7 @@ long long cx, cy, cz; //cross
 long long a[1069], b[1069], c[2], d[2];
 
 int main() {
+	ios_base::sync_with_stdio(0); cin.tie(0);
     cin >> t;
     while(t--){
         cin >> n;
@@ -97,7 +98,15 @@ int main() {
                 b[i] = (x[i]*vz[0] - z[i]*vx[0])/(vx[1]*vz[0] - vz[1]*vx[0]);
             }
             // cout 2 dimensi
-            cout << a[i] << " " << b[i] << endl;
+            // cout << a[i] << " " << b[i] << endl;
         }
+        long long sum = 0, border = 0;
+        for (int i=0; i<n; i++){
+			sum += a[i] * b[(i+1)%n] - b[i] * a[(i+1)%n];
+			border += __gcd(abs(a[i] - a[(i+1)%n]), abs(b[i] - b[(i+1)%n]));
+		}
+		sum = abs(sum);
+		long long ans = (sum - border)/2 + 1;
+		cout << ans << '\n';
     }
 }
